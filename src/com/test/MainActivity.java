@@ -11,6 +11,24 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	private ActionBar actionBar;
 	private ViewPager viewPager;
+	
+	/**
+	 * <pre>
+	 * The name of the tabs. Add and remove the array to add or remove tabs.
+	 * For example, for One tab {@code
+	 * private String[] tabs = {"Tab 1"}
+	 * }
+	 * 
+	 * For two tabs {@code
+	 * private String[] tabs = {"Tab 1", "Tab 2"}
+	 * }
+	 * 
+	 * For six tabs {@code
+	 * private String[] tabs = {"Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6"}
+	 * }
+	 * </pre>
+	 */
+	private String[] tabs = {"Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +37,7 @@ public class MainActivity extends SherlockFragmentActivity {
 
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		viewPager.setOnPageChangeListener(onPageChangeListener);
-		viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+		viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), tabs.length));
 		addActionBarTabs();
 	}
 
@@ -33,7 +51,6 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	private void addActionBarTabs() {
 		actionBar = getSupportActionBar();
-		String[] tabs = { "Tab 1", "Tab 2", "Tab 3" };
 		for (String tabTitle : tabs) {
 			ActionBar.Tab tab = actionBar.newTab().setText(tabTitle)
 					.setTabListener(tabListener);

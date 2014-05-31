@@ -994,9 +994,8 @@ containing a value of this type.
         public static final int activity_main=0x7f030015;
         public static final int fragment_tab_1=0x7f030016;
         public static final int fragment_tab_2=0x7f030017;
-        public static final int fragment_tab_3=0x7f030018;
-        public static final int sherlock_spinner_dropdown_item=0x7f030019;
-        public static final int sherlock_spinner_item=0x7f03001a;
+        public static final int sherlock_spinner_dropdown_item=0x7f030018;
+        public static final int sherlock_spinner_item=0x7f030019;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;

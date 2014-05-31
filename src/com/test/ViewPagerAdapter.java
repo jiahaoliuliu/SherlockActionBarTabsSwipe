@@ -6,28 +6,30 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    private final int PAGES = 3;
+	/**
+	 * The total number of pages (tabs)
+	 */
+	private int totalPages;
 
-    public ViewPagerAdapter(FragmentManager fm) {
+    public ViewPagerAdapter(FragmentManager fm, int totalPages) {
         super(fm);
+        this.totalPages = totalPages;
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
+        switch (position %2) {
             case 0:
                 return new TabFragment1();
             case 1:
                 return new TabFragment2();
-            case 2:
-                return new TabFragment3();
             default:
-                throw new IllegalArgumentException("The item position should be less or equal to:" + PAGES);
+                throw new IllegalArgumentException("The item position should be less or equal to:" + totalPages);
         }
     }
 
     @Override
     public int getCount() {
-        return PAGES;
+        return totalPages;
     }
 }
