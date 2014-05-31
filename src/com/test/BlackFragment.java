@@ -7,11 +7,11 @@ import android.view.ViewGroup;
 
 import com.actionbarsherlock.app.SherlockFragment;
 
-public class TabFragment1 extends SherlockFragment {
+public class BlackFragment extends SherlockFragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragment_tab_1, container, false);
+		return inflater.inflate(R.layout.black_fragment_layout, container, false);
 	}
 }

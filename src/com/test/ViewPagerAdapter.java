@@ -20,9 +20,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position %2) {
             case 0:
-                return new TabFragment1();
+                return new WhiteFragment();
             case 1:
-                return new TabFragment2();
+                return new BlackFragment();
             default:
                 throw new IllegalArgumentException("The item position should be less or equal to:" + totalPages);
         }
